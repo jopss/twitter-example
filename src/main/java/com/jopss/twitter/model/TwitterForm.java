@@ -1,10 +1,26 @@
 package com.jopss.twitter.model;
 
+import java.util.List;
+import twitter4j.Status;
+
+/**
+ * Objeto backing form.
+ */
 public class TwitterForm {
 
     private String pin;
     private String urlRequestToken;
+    private List<Status> statusList;
+    private List<TwitterCredential> credentials;
 
+    public List<Status> getStatusList() {
+        return statusList;
+    }
+
+    public void setStatusList(List<Status> statusList) {
+        this.statusList = statusList;
+    }
+        
     public String getPin() {
         return pin;
     }
@@ -19,6 +35,14 @@ public class TwitterForm {
 
     public void setUrlRequestToken(String urlRequestToken) {
         this.urlRequestToken = urlRequestToken;
+    }
+
+    public List<TwitterCredential> getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(List<TwitterCredential> credentials) {
+        this.credentials = credentials;
     }
     
 }

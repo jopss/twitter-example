@@ -8,9 +8,9 @@
 <h1> <fmt:message key='twitter' /> </h1>
 <hr />
 
-<jopss:messages msgSuccess="${msgSuccess}" msgError="${msgError}" />
+<jopss:messages msgSuccess="${msgSuccess}" msgValidate="${msgValidate}" msgError="${msgError}" />
 
-<form:form id="twitter_form" method="POST" action="${contextPage}/twitter/timeline/" modelAttribute="twitterForm">
+<form:form id="twitter_form" method="POST" action="${contextPage}/twitter/timeline/new/" modelAttribute="twitterForm">
     <form:hidden path="urlRequestToken"/>
     
     <fmt:message key='twitter.step1'>
@@ -27,10 +27,24 @@
     
     <input type="submit" value="<fmt:message key='twitter.button.timeline' />" />
 
-</form:form>
+    <c:if test="${not empty twitterForm.credentials}" >
+        <hr />
+        <br/>
 
-<c:forEach items="${timeline}" var="timelineStatus">
-    <p>
-        <b>${timelineStatus.user.name}:</b> ${timelineStatus.text}
-    </p>
-</c:forEach>
+        <fmt:message key='twitter.step3' />
+        <br/><br/>
+
+        <c:forEach items="${twitterForm.credentials}" var="credential">
+            <a href="${contextPage}/twitter/timeline/user/${credential.id}/">${credential.name}</a> <br/>
+        </c:forEach>
+    </c:if>
+        
+    <hr />
+    <br/><br/>
+    <c:forEach items="${twitterForm.statusList}" var="timelineStatus">
+        <p>
+            <b>${timelineStatus.user.name}:</b> ${timelineStatus.text}
+        </p>
+    </c:forEach>
+
+</form:form>

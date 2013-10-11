@@ -7,12 +7,21 @@
 <fmt:setBundle basename="messages"/> 
 
 <%@ attribute name="msgSuccess" required="true" rtexprvalue="true" description="Mensagem a ser exibido como sucesso. Deve ser uma key bundle."%>
+<%@ attribute name="msgValidate" required="true" rtexprvalue="true" description="Mensagem a ser exibido como validacao. Deve ser uma key bundle."%>
 <%@ attribute name="msgError" required="true" rtexprvalue="true" description="Mensagem a ser exibido como erro. Deve ser um texto normal."%>
 
 <c:if test="${msgSuccess != null and fn:length(msgSuccess) gt 0}" >
     <div>
         <p style="color:blue;">
             <fmt:message key='${msgSuccess}' />
+        </p>
+    </div>
+</c:if>
+
+<c:if test="${msgValidate != null and fn:length(msgValidate) gt 0}" >
+    <div>
+        <p style="color:orange;">
+            <fmt:message key='${msgValidate}' />
         </p>
     </div>
 </c:if>
