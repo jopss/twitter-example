@@ -12,6 +12,7 @@ public class TwitterForm {
     private String urlRequestToken;
     private List<Status> statusList;
     private List<TwitterCredential> credentials;
+    private String username;
 
     public List<Status> getStatusList() {
         return statusList;
@@ -43,6 +44,14 @@ public class TwitterForm {
 
     public void setCredentials(List<TwitterCredential> credentials) {
         this.credentials = credentials;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     
 }

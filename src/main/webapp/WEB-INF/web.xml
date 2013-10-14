@@ -5,6 +5,15 @@
 
     <display-name>twitter-example</display-name>
     
+    <context-param>
+        <param-name>oauth.consumerKey</param-name>
+        <param-value>I8m1J50gEY7Fb2hRupE9w</param-value>
+    </context-param>
+    <context-param>
+        <param-name>oauth.consumerSecret</param-name>
+        <param-value>dsBzJGcKzEN6ciBESbpEJarWmxpEhfZgawOfiEkWK8</param-value>
+    </context-param>
+    
     <servlet>
         <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet

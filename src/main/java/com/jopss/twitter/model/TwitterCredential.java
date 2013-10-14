@@ -14,6 +14,7 @@ public class TwitterCredential {
     private String token;
     private String secret;
             
+    //persiste somente na memoria.
     private static List<TwitterCredential> base = new ArrayList<TwitterCredential>();
     
     public static void addCredencial(Long id, String name, String token, String secret){
@@ -27,7 +28,9 @@ public class TwitterCredential {
     }
     
     public static void addCredencial(TwitterCredential cred){
-        base.add(cred);
+        if(!base.contains(cred)){
+            base.add(cred);
+        }
     }
     
     public static TwitterCredential findUserCredential(Long userId){
@@ -73,6 +76,28 @@ public class TwitterCredential {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TwitterCredential other = (TwitterCredential) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
     
 }
