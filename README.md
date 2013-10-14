@@ -13,7 +13,7 @@ Arquitetura
 Objetivos
 =========
 
-Para saber mais sobre as configuraçõs e a motivação deste projeto, veja este post: 
+Para saber mais sobre as configurações e a motivação deste projeto, veja este post: 
 
 Status
 ======
