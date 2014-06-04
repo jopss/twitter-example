@@ -14,4 +14,4 @@ Arquitetura
 Status
 ======
 
-Finalizado. Em manutenção.
+Finalizado.
