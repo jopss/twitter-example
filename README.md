@@ -10,10 +10,6 @@ Arquitetura
 + Spring MVC com Rest
 + Twitter4J
 
-Objetivos
-=========
-
-Para saber mais sobre as configurações e a motivação deste projeto, veja este post: 
 
 Status
 ======
